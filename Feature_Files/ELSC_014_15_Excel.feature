@@ -1,14 +1,14 @@
 
-@ELSC_014
-Feature: ELSC_014
-  To Automate Elearning Application
+@ELSC_014_015_Excel
+Feature: ELSC_014_015_Excel
+  To Automate Elearning Application Using Excel Testdata
   
-#
+
   @Login
   Scenario: Login to the Application
-  Given I want to navigate the "http://elearningm1.upskills.in/"
-  Given I want to give the username "admin"
-  Given I want to give the password "admin@123"
+  Given I want to navigate the url_Excel
+  Given I want to give the username_Excel
+  Given I want to give the password_Excel
   When I click on Login button
   Then I verify the homepage
   
@@ -16,28 +16,32 @@ Feature: ELSC_014
   Scenario: To verify whether application allows admin to add a course to user
   Given I want to click the Administration link
   Given I want to click the Add users to course link
-  Given I want to Add user from userlist
-  Given I want to Add course from courselist
+  Given I want to Add user from userlist_Excel
+  Given I want to Add course from courselist_Excel
   When I Click Add to the course(s) button
-  Then I verify "The selected users are subscribed to the selected course" message displayed
+  Then I verify message_Excel displayed
   
   @AddUserstocourse
   Scenario: To verify whether application allows admin to add new course category
   Given I want to click the Administration link
   Given I want to click the Courses Categories link
   Given I want to click the Add Category Icon
-  Given I want to give the Category code "BL_IBM_SDET"
-  Given I want to give the Category name "Blended Learning"
+  Given I want to give the Category code_Excel
+  Given I want to give the Category name_Excel
   Given I want to click the Category radio button
   When  I click the Add Category button
-  Then  I Verify "Created" message displayed
-  Then  I want to verify the added category displayed in grid "Blended Learning(BL_IBM_SDET)"
+  Then  I Verify addmessage_Excel displayed
+  Then  I want to verify the added category displayed in grid_Excel
   
   @DeleteCourse
   Scenario: To delete the added course to make sure second occurrence of execution should not fail
   
-  When I Click on the delete button
-  Then  I Verify "Deleted" message displayed after deletion
+  When I Click on the delete button_Excel
+  Then  I Verify deletemessage_Excel displayed after deletion
+  
+  @Logout
+  Scenario: Logout from the Application
+  Given I want to click on logout button
   
   
   
